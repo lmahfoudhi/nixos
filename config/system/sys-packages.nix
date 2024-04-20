@@ -3,6 +3,9 @@
 {
  environment.systemPackages = with pkgs; [
     vim
+    awscli2
+    python3
+    go
     lshw
     ripgrep
     bat
