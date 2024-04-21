@@ -21,20 +21,13 @@ in with lib; {
         layout = dwindle
         resize_on_border = true
       }
+
       input {
         kb_layout = fr
         kb_variant = azerty
-        kb_options = grp:alt_shift_toggle
-     }
-#      input {
-#        kb_layout = "us"
-#      follow_mouse = 1
-#        touchpad {
-#          natural_scroll = false
-#        }
-#        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-#        accel_profile = flat
-#      }
+        kb_options = grp:alt_shift_toggle     
+      }
+      
       env = NIXOS_OZONE_WL, 1
       env = NIXPKGS_ALLOW_UNFREE, 1
       env = XDG_CURRENT_DESKTOP, Hyprland
@@ -48,11 +41,10 @@ in with lib; {
       env = QT_AUTO_SCREEN_SCALE_FACTOR, 1
       env = MOZ_ENABLE_WAYLAND, 1
       env = WLR_NO_HARDWARE_CURSORS,1
+      env = LIBVA_DRIVER_NAME,nvidia
+      env = GBM_BACKEND,nvidia-drm
+      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
    
-      gestures {
-        workspace_swipe = true
-        workspace_swipe_fingers = 3
-      }
       misc {
         mouse_move_enables_dpms = true
         key_press_enables_dpms = false

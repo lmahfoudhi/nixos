@@ -9,7 +9,7 @@ in {
     ignore-empty-password
     indicator-thickness=15
     indicator-radius=150
-    image=~/.config/swaylock-bg.jpg
+    image=~/.config/nixos/config/home/files/swaylock-bg.png
     ring-color=${palette.base0D}
     key-hl-color=${palette.base0F}
     line-color=00000000
@@ -19,6 +19,5 @@ in {
     text-color=${palette.base05}
     text-clear-color=${palette.base05}
     ring-clear-color=${palette.base0D}
-    font=Ubuntu
   '';
 }

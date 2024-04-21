@@ -12,44 +12,15 @@ in with lib; {
       layer = "top";
       position = "top";
 
-      modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "hyprland/window" "pulseaudio" "cpu" "memory"];
-      modules-right = [ "custom/hyprbindings" "custom/exit" "idle_inhibitor" "custom/themeselector" "custom/notification" "battery" "clock" "tray" ];
+      modules-left = ["network" "custom/exit"];
+      modules-right = ["custom/notification" "pulseaudio" "clock"  ];
 
-      "hyprland/workspaces" = {
-      	format = "{icon}";
-      	format-icons = {
-          default = " ";
-          active = " ";
-          urgent = " ";
-      	};
-      	on-scroll-up = "hyprctl dispatch workspace e+1";
-      	on-scroll-down = "hyprctl dispatch workspace e-1";
-      };
       "clock" = {
 	format ='' {:L%H:%M}''; 
       	tooltip = true;
 	tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
       };
-      "hyprland/window" = {
-      	max-length = 25;
-        separate-outputs = false;
-        rewrite = { "" = " 🙈 No Windows? "; };
-      };
-      "memory" = {
-      	interval = 5;
-      	format = " {}%";
-        tooltip = true;
-      };
-      "cpu" = {
-      	interval = 5;
-      	format = " {usage:2}%";
-        tooltip = true;
-      };
-      "disk" = {
-        format = " {free}";
-        tooltip = true;
-      };
+       
       "network" = {
         format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
         format-ethernet = " {bandwidthDownOctets}";
@@ -57,9 +28,7 @@ in with lib; {
         format-disconnected = "󰤮";
         tooltip = false;
       };
-      "tray" = {
-        spacing = 12;
-      };
+    
       "pulseaudio" = {
         format = "{icon} {volume}% {format_source}";
         format-bluetooth = "{volume}% {icon} {format_source}";
@@ -76,32 +45,14 @@ in with lib; {
           car = "";
           default = ["" "" ""];
         };
-        on-click = "sleep 0.1 && pavucontrol";
+        on-click = "pavucontrol";
       };
       "custom/exit" = {
         tooltip = false;
         format = "";
         on-click = "sleep 0.1 && wlogout";
       };
-      "custom/startmenu" = {
-        tooltip = false;
-        format = " ";
-        # exec = "rofi -show drun";
-        on-click = "sleep 0.1 && rofi-launcher";
-      };
-      "custom/hyprbindings" = {
-        tooltip = false;
-        format = " Bindings";
-        on-click = "sleep 0.1 && list-hypr-bindings";
-      };
-      "idle_inhibitor" = {
-        format = "{icon}";
-        format-icons = {
-            activated = "";
-            deactivated = "";
-        };
-        tooltip = "true";
-      };
+    
       "custom/notification" = {
         tooltip = false;
         format = "{icon} {}";
@@ -118,20 +69,8 @@ in with lib; {
         return-type = "json";
         exec-if = "which swaync-client";
         exec = "swaync-client -swb";
-        on-click = "sleep 0.1 && task-waybar";
+        on-click = "sleep 0.1 && swaync-client -t";
         escape = true;
-      };
-      "battery" = {
-        states = {
-          warning = 30;
-          critical = 15;
-        };
-        format = "{icon} {capacity}%";
-        format-charging = "󰂄 {capacity}%";
-        format-plugged = "󱘖 {capacity}%";
-        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-        on-click = "";
-        tooltip = false;
       };
     }];
     style = concatStrings [''

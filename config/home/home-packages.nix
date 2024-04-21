@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     discord
+    pavucontrol
     spotify
     rofi-wayland
     swww

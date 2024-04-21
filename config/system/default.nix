@@ -15,5 +15,6 @@
 	./sys-packages.nix
 	./polkit.nix
 	./env.nix
+	./kernel.nix
     ];
 }

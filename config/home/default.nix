@@ -14,5 +14,6 @@
 	./swaync.nix
 	./wlogout.nix
 	./waybar.nix
+	./qt.nix
   ];
 }
