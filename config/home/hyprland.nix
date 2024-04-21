@@ -48,22 +48,21 @@ in with lib; {
       misc {
         mouse_move_enables_dpms = true
         key_press_enables_dpms = false
+        disable_hyprland_logo = true
+        disable_splash_rendering = true
       }
-      animations {
+     animations {
         enabled = yes
-        bezier = wind, 0.05, 0.9, 0.1, 1.05
-        bezier = winIn, 0.1, 1.1, 0.1, 1.1
-        bezier = winOut, 0.3, -0.3, 0, 1
-        bezier = liner, 1, 1, 1, 1
-        animation = windows, 1, 6, wind, slide
-        animation = windowsIn, 1, 6, winIn, slide
-        animation = windowsOut, 1, 5, winOut, slide
-        animation = windowsMove, 1, 5, wind, slide
-        animation = border, 1, 1, liner
-        animation = borderangle, 1, 30, liner, loop
-        animation = fade, 1, 10, default
-        animation = workspaces, 1, 5, wind
-      }
+
+        bezier = ease,0.4,0.02,0.21,1
+
+        animation = windows, 1, 3.5, ease, slide
+        animation = windowsOut, 1, 3.5, ease, slide
+        animation = border, 1, 6, default
+        animation = fade, 1, 3, ease
+        animation = workspaces, 1, 3.5, ease
+    }
+        
       decoration {
         rounding = 10
         drop_shadow = false
@@ -80,15 +79,14 @@ in with lib; {
           color = rgba(${theme.base0A}ff)
         }
       }
+      exec = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+      exec = dbus-update-activation-environment --systemd --all
       exec-once = $POLKIT_BIN
-      exec-once = dbus-update-activation-environment --systemd --all
-      exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-      exec-once = swww-daemon
-      exec-once = swww img ./files/wallpaper.png
+      exec-once = swww-daemon && swww img ./files/wallpaper.png
       exec-once = waybar
       exec-once = swaync
       exec-once = nm-applet --indicator
-      #exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'
+      exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'
       dwindle {
         pseudotile = true
         preserve_split = true
