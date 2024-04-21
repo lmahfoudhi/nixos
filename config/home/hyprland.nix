@@ -106,7 +106,6 @@ in with lib; {
       }
       bind = ${modifier},Return,exec,alacritty
       bind = ${modifier}SHIFT,Return,exec,rofi-launcher
-      bind = ${modifier}SHIFT,W,exec,web-search
       bind = ${modifier}SHIFT,N,exec,swaync-client -rs
       bind = ${modifier},W,exec,firefox
       bind = ${modifier},D,exec,discord

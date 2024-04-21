@@ -7,7 +7,7 @@
         ./gpu.nix
         ./display-manager.nix
 	./users.nix
-	./sound.nix
+	./services.nix
 	./locals.nix
 	./network.nix
 	./nix-config.nix
