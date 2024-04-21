@@ -8,8 +8,8 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver = {
-    layout = "fr";
-    xkbVariant = "";
+#    layout = "fr";
+#    xkbVariant = "";
     libinput.enable = true;
     displayManager.sddm = {
       enable = true;

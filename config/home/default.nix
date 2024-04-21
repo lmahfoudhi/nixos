@@ -9,5 +9,10 @@
         ./git.nix
         ./hyprland.nix
 	./palette.nix
+	./rofi.nix
+	./swaylock.nix
+	./swaync.nix
+	./wlogout.nix
+	./waybar.nix
   ];
 }

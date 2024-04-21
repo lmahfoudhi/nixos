@@ -21,17 +21,20 @@ in with lib; {
         layout = dwindle
         resize_on_border = true
       }
-
       input {
-        kb_layout = "us"
-	kb_options = grp:alt_shift_toggle
-        follow_mouse = 1
-        touchpad {
-          natural_scroll = false
-        }
-        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-        accel_profile = flat
-      }
+        kb_layout = fr
+        kb_variant = azerty
+        kb_options = grp:alt_shift_toggle
+     }
+#      input {
+#        kb_layout = "us"
+#      follow_mouse = 1
+#        touchpad {
+#          natural_scroll = false
+#        }
+#        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+#        accel_profile = flat
+#      }
       env = NIXOS_OZONE_WL, 1
       env = NIXPKGS_ALLOW_UNFREE, 1
       env = XDG_CURRENT_DESKTOP, Hyprland
@@ -88,9 +91,10 @@ in with lib; {
       #exec-once = $POLKIT_BIN
       exec-once = dbus-update-activation-environment --systemd --all
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-      #exec-once = swww init
+      exec-once = swww-daemon
+      exec-once = swww img ./files/wallpaper.png
       exec-once = waybar
-      #exec-once = swaync
+      exec-once = swaync
       #exec-once = wallsetter
       exec-once = nm-applet --indicator
       #exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'
