@@ -5,6 +5,9 @@
     vim
     awscli2
     python3
+    networkmanagerapplet
+    polkit_gnome
+    libvirt
     go
     lshw
     ripgrep

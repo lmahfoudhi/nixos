@@ -13,5 +13,6 @@
 	./nix-config.nix
 	./fonts.nix
 	./sys-packages.nix
+	./polkit.nix
     ];
 }

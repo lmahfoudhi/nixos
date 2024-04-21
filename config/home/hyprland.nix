@@ -88,7 +88,7 @@ in with lib; {
           color = rgba(${theme.base0A}ff)
         }
       }
-      #exec-once = $POLKIT_BIN
+      exec-once = $POLKIT_BIN
       exec-once = dbus-update-activation-environment --systemd --all
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec-once = swww-daemon

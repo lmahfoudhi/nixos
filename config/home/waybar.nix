@@ -17,7 +17,7 @@ in with lib; {
       modules-right = [ "custom/hyprbindings" "custom/exit" "idle_inhibitor" "custom/themeselector" "custom/notification" "battery" "clock" "tray" ];
 
       "hyprland/workspaces" = {
-      	format = "{icon}"
+      	format = "{icon}";
       	format-icons = {
           default = " ";
           active = " ";
@@ -27,7 +27,7 @@ in with lib; {
       	on-scroll-down = "hyprctl dispatch workspace e-1";
       };
       "clock" = {
-	format ='' {:L%H:%M}'' 
+	format ='' {:L%H:%M}''; 
       	tooltip = true;
 	tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
       };
@@ -163,10 +163,7 @@ in with lib; {
 	  color: #${palette.base00};
           background: linear-gradient(45deg, #${palette.base0E}, #${palette.base0F}, #${palette.base0D}, #${palette.base09});
           background-size: 300% 300%;
-          ${if waybarAnim == true then ''
-            animation: gradient_horizontal 15s ease infinite;
-          '' else '' 
-          ''}
+          animation: gradient_horizontal 15s ease infinite;
 	  opacity: 0.5;
           transition: ${betterTransition};
       }
@@ -178,10 +175,7 @@ in with lib; {
 	  color: #${palette.base00};
           background: linear-gradient(45deg, #${palette.base0E}, #${palette.base0F}, #${palette.base0D}, #${palette.base09});
           background-size: 300% 300%;
-          ${if waybarAnim == true then ''
-            animation: gradient_horizontal 15s ease infinite;
-          '' else '' 
-          ''}
+          animation: gradient_horizontal 15s ease infinite;
           transition: ${betterTransition};
 	  opacity: 1.0;
 	  min-width: 40px;
@@ -191,10 +185,7 @@ in with lib; {
 	  color: #${palette.base00};
           background: linear-gradient(45deg, #${palette.base0E}, #${palette.base0F}, #${palette.base0D}, #${palette.base09});
           background-size: 300% 300%;
-          ${if waybarAnim == true then ''
             animation: gradient_horizontal 15s ease infinite;
-          '' else '' 
-          ''}
 	  opacity: 0.8;
           transition: ${betterTransition};
       }
@@ -243,10 +234,7 @@ in with lib; {
     	color: #${palette.base01};
         background: linear-gradient(45deg, #${palette.base0C}, #${palette.base0F}, #${palette.base0B}, #${palette.base08});
         background-size: 300% 300%;
-        ${if waybarAnim == true then ''
           animation: gradient_horizontal 15s ease infinite;
-        '' else '' 
-        ''}
 	margin: 4px;
 	padding: 2px 10px;
 	border-radius: 10px;
@@ -318,10 +306,7 @@ in with lib; {
     	color: #${palette.base00};
         background: linear-gradient(45deg, #${palette.base09}, #${palette.base03}, #${palette.base0C}, #${palette.base07});
         background-size: 300% 300%;
-        ${if waybarAnim == true then ''
           animation: gradient_horizontal 15s ease infinite;
-        '' else '' 
-        ''}
 	margin: 4px;
 	padding: 2px 10px;
 	border-radius: 10px;
