@@ -10,7 +10,7 @@ in  {
 	padding.x = 15;
 	padding.y = 15;
 	decorations = "none";
-	startup_mode = "Fullscreen";
+	startup_mode = "Windowed";
 	dynamic_title = true;
 	opacity = 0.9;
       };
