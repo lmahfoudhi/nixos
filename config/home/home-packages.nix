@@ -13,5 +13,6 @@
     polkit
     waybar
     gnome.gnome-tweaks
+    (import ./../scripts/rofi-launcher.nix { inherit pkgs; })
   ];
 }
