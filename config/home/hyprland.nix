@@ -1,8 +1,9 @@
 
-{ pkgs, config, lib, ... }:
+{ pkgs, config, lib, inputs, ... }:
 
 let
   theme = config.colorScheme.palette;
+  hyprtrails = inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails;
 in with lib; {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -121,28 +122,26 @@ in with lib; {
       bind = ${modifier},l,movefocus,r
       bind = ${modifier},k,movefocus,u
       bind = ${modifier},j,movefocus,d
-      bind = ${modifier},1,workspace,1
-      bind = ${modifier},2,workspace,2
-      bind = ${modifier},3,workspace,3
-      bind = ${modifier},4,workspace,4
-      bind = ${modifier},5,workspace,5
-      bind = ${modifier},6,workspace,6
-      bind = ${modifier},7,workspace,7
-      bind = ${modifier},8,workspace,8
-      bind = ${modifier},9,workspace,9
-      bind = ${modifier},0,workspace,10
-      bind = ${modifier}SHIFT,SPACE,movetoworkspace,special
-      bind = ${modifier},SPACE,togglespecialworkspace
-      bind = ${modifier}SHIFT,1,movetoworkspace,1
-      bind = ${modifier}SHIFT,2,movetoworkspace,2
-      bind = ${modifier}SHIFT,3,movetoworkspace,3
-      bind = ${modifier}SHIFT,4,movetoworkspace,4
-      bind = ${modifier}SHIFT,5,movetoworkspace,5
-      bind = ${modifier}SHIFT,6,movetoworkspace,6
-      bind = ${modifier}SHIFT,7,movetoworkspace,7
-      bind = ${modifier}SHIFT,8,movetoworkspace,8
-      bind = ${modifier}SHIFT,9,movetoworkspace,9
-      bind = ${modifier}SHIFT,0,movetoworkspace,10
+      bind = ${modifier}, code:10, workspace, 1
+      bind = ${modifier}, code:11, workspace, 2
+      bind = ${modifier}, code:12, workspace, 3
+      bind = ${modifier}, code:13, workspace, 4
+      bind = ${modifier}, code:14, workspace, 5
+      bind = ${modifier}, code:15, workspace, 6
+      bind = ${modifier}, code:16, workspace, 7
+      bind = ${modifier}, code:17, workspace, 8
+      bind = ${modifier}, code:18, workspace, 9
+      bind = ${modifier}, code:19, workspace, 10
+      bind = ${modifier} SHIFT, code:10, movetoworkspace, 1
+      bind = ${modifier} SHIFT, code:11, movetoworkspace, 2
+      bind = ${modifier} SHIFT, code:12, movetoworkspace, 3
+      bind = ${modifier} SHIFT, code:13, movetoworkspace, 4
+      bind = ${modifier} SHIFT, code:14, movetoworkspace, 5
+      bind = ${modifier} SHIFT, code:15, movetoworkspace, 6
+      bind = ${modifier} SHIFT, code:16, movetoworkspace, 7
+      bind = ${modifier} SHIFT, code:17, movetoworkspace, 8
+      bind = ${modifier} SHIFT, code:18, movetoworkspace, 9 
+      bind = ${modifier} SHIFT, code:19, movetoworkspace, 10
       bind = ${modifier}CONTROL,right,workspace,e+1
       bind = ${modifier}CONTROL,left,workspace,e-1
       bind = ${modifier},mouse_down,workspace, e+1

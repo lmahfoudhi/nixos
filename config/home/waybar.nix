@@ -12,7 +12,8 @@ in with lib; {
       layer = "top";
       position = "top";
 
-      modules-left = ["network" "custom/exit"];
+      modules-left = ["custom/exit"];
+      modules-center = ["hyprland/workspaces"];
       modules-right = ["custom/notification" "pulseaudio" "clock"  ];
 
       "clock" = {
@@ -49,7 +50,7 @@ in with lib; {
       };
       "custom/exit" = {
         tooltip = false;
-        format = "";
+        format = "  ";
         on-click = "sleep 0.1 && wlogout";
       };
     
