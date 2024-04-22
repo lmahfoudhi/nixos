@@ -3,16 +3,16 @@
 
 let
   theme = config.colorScheme.palette;
-  hyprtrails = inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails;
 in with lib; {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
+    #plugins = [ inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails ];
     extraConfig = let
       modifier = "SUPER";
     in concatStrings [ ''
-      monitor=,preferred,auto,1
+      monitor=,preferred,auto,1.2
       general {
         gaps_in = 6
         gaps_out = 8
@@ -75,11 +75,7 @@ in with lib; {
             ignore_opacity = on
         }
       }
-      plugin {
-        hyprtrails {
-          color = rgba(${theme.base0A}ff)
-        }
-      }
+      
       exec = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec = dbus-update-activation-environment --systemd --all
       exec-once = $POLKIT_BIN
