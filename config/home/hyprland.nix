@@ -8,7 +8,7 @@ in with lib; {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    #plugins = [ inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails ];
+#    plugins = [ inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars ];
     extraConfig = let
       modifier = "SUPER";
     in concatStrings [ ''

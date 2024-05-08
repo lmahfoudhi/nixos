@@ -4,6 +4,7 @@
  environment.systemPackages = with pkgs; [
     vim
     awscli2
+    calibre
     python3
     networkmanagerapplet
     polkit_gnome

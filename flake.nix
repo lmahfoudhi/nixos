@@ -6,7 +6,7 @@ inputs = {
 	url = "github:nix-community/home-manager";
   	inputs.nixpkgs.follows = "nixpkgs";
    };
-   hyprland.url = "github:hyprwm/Hyprland"; 
+   hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; 
    hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";

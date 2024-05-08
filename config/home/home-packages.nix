@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    google-chrome
     discord
     pavucontrol
     spotify
