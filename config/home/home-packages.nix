@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     google-chrome
     discord
+    telegram-desktop
     pavucontrol
     spotify
     rofi-wayland
@@ -14,6 +15,7 @@
     mpv
     polkit
     waybar
+    steam
     gnome.gnome-tweaks
     (import ./../scripts/rofi-launcher.nix { inherit pkgs; })
   ];
